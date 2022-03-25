@@ -1,0 +1,43 @@
+TASK: 'VA'
+OUT_DIR: '/media/nguyenhonghai/Data/projects/Affwild2-ABAW3-main3/train_logs/tmp'
+DATA_LOADER:
+  DATA_DIR:  '/home/nguyenhonghai/datasets_test/ABAW3/'
+  KFOLD_DATA_DIR: '/home/nguyenhonghai/datasets_test/ABAW3/Kfold_Data/'
+  SEQ_LEN: 64 # 32
+  IMG_SIZE: 112
+  NUM_WORKERS: 4 #4
+MODEL:
+  BACKBONE: 'reload'    # regnet-400mf, regnet-800mf, regnet-1.6gf, regnet-3.2gf, vggface2-senet50, vggface2-resnet50, regnet, facex.MobileFaceNet, facex.EfficientNets-B0,
+  BACKBONE_FREEZE: ['block4', 'block3']
+  BACKBONE_PRETRAINED: '' # '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp/AU/2022-02-12_09-46-18/checkpoints/epoch=14-step=19919.ckpt' # '/mnt/Work/Dataset/Affwild2_ABAW3/train_logs/tmp/AU/2022-02-12_00-18-42/checkpoints/epoch=12-step=5173.ckpt'
+  FREEZE_BATCHNORM: False
+GRU:
+  HIDDEN_SIZE: 256 #256
+  NUM_LAYERS: 4 # 2
+TRANF:
+  NHEAD: 2 #2
+TRAIN:
+  BATCH_SIZE:  16 # 16
+  MIXED_PRECISION: True
+  LABEL_SMOOTHING: 0.1
+  LOSS_WEIGHTS: False
+  LIMIT_TRAIN_BATCHES: 0.005 #0.3
+TEST:
+  BATCH_SIZE: 64 #64
+OPTIM:
+  NAME: 'adam'
+  LR_POLICY: 'cos-restart'  # reducelrMetric #'cos-restart'
+  BASE_LR: 0.01
+  MIN_LR: 0.
+  MOMENTUM: 0.9
+  DAMPENING: 0.
+  WEIGHT_DECAY: 5e-5
+  WARMUP_FACTOR: 0.1
+  USE_SWA: False
+  MAX_EPOCH: 1
+  WARMUP_EPOCHS: 5
+  FOCAL_ALPHA: 0.5
+  FOCAL_GAMMA: 2.0
+LOGGER: 'wandb'  # TensorBoard, or wandb
+MODEL_TYPE: 'gru+tranf' #'gru' #'tranf'
+N_KFOLD: -1

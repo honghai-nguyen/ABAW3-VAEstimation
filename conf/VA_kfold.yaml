@@ -1,0 +1,105 @@
+CFG_DEST: config.yaml
+COMBINE_LOSS: true
+CUDNN:
+  BENCHMARK: true
+DATA_LOADER:
+  DATA_DIR: /home/nguyenhonghai/datasets/ABAW3/
+  EMO_INDEX: -1
+  EXPR_MLB: false
+  IMG_SIZE: 112
+  KFOLD_DATA_DIR: /home/nguyenhonghai/datasets/ABAW3/Kfold_Data/
+  NUM_WORKERS: 4
+  PIN_MEMORY: false
+  SAMPLING_METHOD: sequentially
+  SEQ_LEN: 32
+DATA_NAME: eev
+DESC: ''
+DOWNLOAD_CACHE: /tmp/pycls-download-cache
+FAST_DEV_RUN: 0
+GRU:
+  BIDIRECTIONAL: false
+  DROPOUT: 0.0
+  HIDDEN_SIZE: 256
+  NUM_LAYERS: 2
+LOGGER: wandb
+LOG_DEST: stdout
+LOG_PERIOD: 10
+LSTM:
+  BIDIREC: false
+  DROPOUT: 0.0
+  HIDDEN_SIZE: 64
+  NUM_LAYERS: 4
+MODEL:
+  BACKBONE: regnet-400mf
+  BACKBONE_FREEZE:
+  - block4
+  - block3
+  - block2
+  BACKBONE_PRETRAINED: ''
+  FC_HIDDEN: 32
+  FEATURES:
+  - effb0
+  FREEZE_BATCHNORM: true
+  LOSS_FUN: mse
+  NUM_CLASSES: 15
+  TEMPORAL_TYPE: tcn
+  USE_POSITION: true
+MODEL_TYPE: gru+tranf
+NOTE: ''
+NUM_GPUS: 1
+N_KFOLD: 4
+OPTIM:
+  BASE_LR: 0.001
+  DAMPENING: 0.0
+  EMA_ALPHA: 1.0e-05
+  EMA_UPDATE_PERIOD: 32
+  FOCAL_ALPHA: 0.5
+  FOCAL_GAMMA: 2.0
+  LR_MULT: 0.1
+  LR_POLICY: cos-restart
+  MAX_EPOCH: 10
+  MIN_LR: 0.0
+  MOMENTUM: 0.9
+  NAME: adam
+  NESTEROV: true
+  STEPS: []
+  USE_SWA: false
+  WARMUP_EPOCHS: 1
+  WARMUP_FACTOR: 0.1
+  WEIGHT_DECAY: 5.0e-05
+OUT_DIR: /media/nguyenhonghai/Data/projects/Affwild2-ABAW3-main2/train_logs/VA_v1/
+RNG_SEED: 1
+TASK: VA
+TCN:
+  DILATIONS: 4
+  DROPOUT: 0.0
+  K_SIZE: 3
+  NORM: true
+  NUM_CHANNELS: 512
+  NUM_HEAD: 1
+  NUM_STACK: 2
+TEST:
+  BATCH_SIZE: 64
+  DATASET: ''
+  SPLIT: val
+  WEIGHTS: ''
+TRAIN:
+  ACCUM_GRAD_BATCHES: 1
+  AUTO_RESUME: true
+  BATCH_SIZE: 16
+  DATASET: ''
+  DROP_PERC: 0.3
+  LABEL_SMOOTHING: 0.1
+  LIMIT_TRAIN_BATCHES: 1.0
+  LOSS_WEIGHTS: false
+  MIXED_PRECISION: true
+  SPLIT: train
+  WEIGHTS: ''
+TRANF:
+  DIM_FC: 1024
+  DROPOUT: 0.3
+  NHEAD: 8
+  NUM_ENC_DEC: 3
+T_MULT: 2
+VALUE_COMBINE_LOSS: 0.5
+VERBOSE: true
