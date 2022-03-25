@@ -22,7 +22,7 @@ bash  scripts/train_kfold.sh.
 bash  scripts/train_GRU_Att.sh.
 ```
 
-### 4. Traning GRU block combined with Transformer block.
+### 5. Traning GRU block combined with Transformer block.
 + Edit 'root_project' and 'data_dir' in scripts/train_GRU_Tran.sh.
 + Run training 
 ```bash
