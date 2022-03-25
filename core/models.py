@@ -1,5 +1,5 @@
 """
-Author: HuynhVanThong
+Author: HuynhVanThong & NguyenHong Hai
 Department of AI Convergence, Chonnam Natl. Univ.
 """
 import os
