@@ -1,4 +1,5 @@
-# Aff2-ABAW3 @ CVPR 2022 - Valence Arousal Estimation - PRL
+
+:3rd_place_medal: [Affwild2-ABAW3 @ CVPRW 2022](https://ibug.doc.ic.ac.uk/resources/cvpr-2022-3rd-abaw/) -  Valence Arousal Estimation - PRL
 
 ### 1. Create environment
 + Create a python environment using conda or other tools.
