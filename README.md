@@ -29,3 +29,17 @@ bash  scripts/train_GRU_Att.sh.
 ```bash
 bash  scripts/train_GRU_Tran.sh.
 ```
+
+
+## Citation
+
+```bibtex
+@InProceedings{Nguyen_2022_CVPR,
+    author    = {Nguyen, Hong-Hai and Huynh, Van-Thong and Kim, Soo-Hyung},
+    title     = {An Ensemble Approach for Facial Behavior Analysis In-the-Wild Video},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2022},
+    pages     = {2512-2517}
+}
+```
